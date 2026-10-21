@@ -1,4 +1,4 @@
-# CD-Kurtar Kılavuzu
+# CDSaver Kılavuzu
 
 ## Her seferinde, sırayla
 
@@ -23,13 +23,13 @@ cmd /c dir /s /b E:\
 Bütün disk (fotoğraf, karışık dosya, her şey):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
+powershell -ExecutionPolicy Bypass -File ".\CDSaver.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
 ```
 
 Tek dosya (VCD videosu gibi):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\Kurtarilan\disk1.DAT"
+powershell -ExecutionPolicy Bypass -File ".\CDSaver.ps1" -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\Kurtarilan\disk1.DAT"
 ```
 
 Not: Sürücü kökü için `E:\\` yazın (iki ters bölü). Tek ters bölü ile tırnak içinde yazarsanız Windows tırnağı bozar.

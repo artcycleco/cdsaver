@@ -1,10 +1,12 @@
-# CD-Kurtar
+<p align="center"><img src="docs/logo.png" width="150" alt="CDSaver logosu"></p>
+
+# CDSaver
 
 **Çizik, eski, okunmayan CD ve DVD'lerden dosya kurtaran küçük bir Windows aracı.**
 
-Bilgisayarınız bir diski açmaya çalışırken donuyor, sürücü takılıyor, dosya kopyalama yarıda kalıyor mu? CD-Kurtar bu diskleri sabırla, parça parça okur. Okuyabildiğini kaydeder, okuyamadığını not alır, sonra geri dönüp tekrar dener. Bilgisayar kapansa, kablo çekilse bile kaldığı yerden devam eder.
+Bilgisayarınız bir diski açmaya çalışırken donuyor, sürücü takılıyor, dosya kopyalama yarıda kalıyor mu? CDSaver bu diskleri sabırla, parça parça okur. Okuyabildiğini kaydeder, okuyamadığını not alır, sonra geri dönüp tekrar dener. Bilgisayar kapansa, kablo çekilse bile kaldığı yerden devam eder.
 
-Bu araç, 1990'lardan kalma aile videolarının bulunduğu dört diski kurtarmak için yazıldı. Dördü de eksiksiz kurtarıldı.
+Bu araç, 1989 ile 1996 arasından görüntüler taşıyan, yaklaşık yirmi yıllık dört diski kurtarmak için yazıldı. Dördü de eksiksiz kurtarıldı.
 
 [![Claude Code ile yapıldı](https://img.shields.io/badge/Claude%20Code%20ile%20yap%C4%B1ld%C4%B1-D97757?style=flat&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-green.svg)](LICENSE)
@@ -43,13 +45,13 @@ cmd /c dir /s /b E:\
 Bütün diski kurtarmak için:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
+powershell -ExecutionPolicy Bypass -File ".\CDSaver.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
 ```
 
 Tek bir dosyayı kurtarmak için (örneğin bir VCD videosu):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\Kurtarilan\video1.DAT"
+powershell -ExecutionPolicy Bypass -File ".\CDSaver.ps1" -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\Kurtarilan\video1.DAT"
 ```
 
 6. Bekleyin. Ekranda sürekli yenilenen bir satır görürsünüz:
@@ -74,9 +76,9 @@ DVD disklerindeki `VIDEO_TS\VTS_01_1.VOB`, `VTS_01_2.VOB` dosyaları için aynı
 
 ## Nasıl çalışır (merak edenler için)
 
-Disk 2048 baytlık sektörlerden oluşur. CD-Kurtar dosyayı sektör sektör okur ve yanına bir **harita dosyası** yazar: hangi sektör okundu, hangisi okunmadı. Her 20 saniyede harita kaydedilir, bu yüzden hiçbir ilerleme kaybolmaz.
+Disk 2048 baytlık sektörlerden oluşur. CDSaver dosyayı sektör sektör okur ve yanına bir **harita dosyası** yazar: hangi sektör okundu, hangisi okunmadı. Her 20 saniyede harita kaydedilir, bu yüzden hiçbir ilerleme kaybolmaz.
 
-Asıl numara okuma biçiminde. Normal bir kopyalama işlemi, sürücü takılırsa sonsuza kadar bekler ve Windows'u da kendiyle birlikte dondurur. CD-Kurtar her okumayı zaman sınırlı başlatır; süre dolunca işletim sisteminden okumayı iptal etmesini ister ve o parçayı "sonra" diye işaretler. Altı geçiş yapar: önce 32 sektörlük büyük parçalar, sonra giderek küçülen parçalar, bazı geçişlerde ters yönde. Son geçişte tek sektör tek sektör dener.
+Asıl numara okuma biçiminde. Normal bir kopyalama işlemi, sürücü takılırsa sonsuza kadar bekler ve Windows'u da kendiyle birlikte dondurur. CDSaver her okumayı zaman sınırlı başlatır; süre dolunca işletim sisteminden okumayı iptal etmesini ister ve o parçayı "sonra" diye işaretler. Altı geçiş yapar: önce 32 sektörlük büyük parçalar, sonra giderek küçülen parçalar, bazı geçişlerde ters yönde. Son geçişte tek sektör tek sektör dener.
 
 Bu yaklaşım, Linux dünyasının bilinen aracı ddrescue'nun mantığıdır. Burada aynı mantık, hiçbir kurulum gerektirmeden Windows'ta çalışacak biçimde PowerShell ile yazıldı.
 
@@ -88,7 +90,7 @@ Bu yaklaşım, Linux dünyasının bilinen aracı ddrescue'nun mantığıdır. B
 
 ## Bu araç nasıl yapıldı
 
-CD-Kurtar, [Claude Code](https://claude.com/claude-code) ile birlikte yazıldı. Sorunu ben anlattım, kodu Claude yazdı, test etti, hatalarını birlikte düzelttik. Kurtarma sırasında bilgisayarın donması, uyku modu, USB sürücünün düşmesi gibi her sorun bir sohbet turunda çözüldü. Bu depo, sıradan bir kullanıcının yapay zekâyla ne kadar işe yarar bir araç üretebileceğinin kaydıdır.
+CDSaver, [Claude Code](https://claude.com/claude-code) ile birlikte yazıldı. Sorunu ben anlattım, kodu Claude yazdı, test etti, hatalarını birlikte düzelttik. Kurtarma sırasında bilgisayarın donması, uyku modu, USB sürücünün düşmesi gibi her sorun bir sohbet turunda çözüldü. Bu depo, sıradan bir kullanıcının yapay zekâyla ne kadar işe yarar bir araç üretebileceğinin kaydıdır.
 
 Deneyin hikâyesi: [Artcycle LABS, Deneyler](https://artcycle.co)
 

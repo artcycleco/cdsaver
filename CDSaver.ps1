@@ -1,5 +1,5 @@
 <#
-    CD-Kurtar.ps1  v2  --  Hasarli CD/DVD'den inatci dosya kurtarma
+    CDSaver.ps1  v2  --  Hasarli CD/DVD'den inatci dosya kurtarma
     ================================================================
     v2 YENILIKLERI:
       * ZAMAN ASIMI: bir okuma N saniyede gelmezse GERCEKTEN iptal edilir
@@ -14,10 +14,10 @@
       * QuickEdit kapatilir (pencereye tiklayinca islem durmasin diye).
 
     KULLANIM - TEK DOSYA:
-      .\CD-Kurtar.ps1 -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\...\video1.DAT"
+      .\CDSaver.ps1 -Kaynak "E:\MPEGAV\AVSEQ01.DAT" -Hedef "C:\...\video1.DAT"
 
     KULLANIM - TUM DISK (klasor modu):
-      .\CD-Kurtar.ps1 -Klasor "E:\" -Hedef "C:\...\disk1"
+      .\CDSaver.ps1 -Klasor "E:\" -Hedef "C:\...\disk1"
 
     Yarida kesilirse ayni komutu tekrar calistir; kaldigi yerden devam eder.
 #>
@@ -127,7 +127,7 @@ function Set-OkumaHizi {
 function Kaydet-Harita {
     param([string]$Yol, [byte[]]$D, [long]$Uzunluk)
     $sb = New-Object Text.StringBuilder
-    [void]$sb.AppendLine("# CD-Kurtar harita v1")
+    [void]$sb.AppendLine("# CDSaver harita v1")
     [void]$sb.AppendLine("LEN $Uzunluk")
     $i = 0
     while ($i -lt $D.Length) {
@@ -406,7 +406,7 @@ $script:LogYolu = Join-Path (Split-Path -Parent $PSCommandPath) ("kurtarma-log-{
 
 Write-Host ""
 Write-Host "=======================================================" -ForegroundColor Cyan
-Write-Host "  CD-KURTAR  v2" -ForegroundColor Cyan
+Write-Host "  CDSAVER  v2" -ForegroundColor Cyan
 Write-Host "=======================================================" -ForegroundColor Cyan
 
 $qe = Kapat-QuickEdit
@@ -415,7 +415,7 @@ Write-Host ("  QuickEdit  : " + $(if ($qe) { "kapatildi (yanlislikla tiklayinca 
 Write-Host ("  Uyku engeli: " + $(if ($uy) { "aktif" } else { "kurulamadi - uyku ayarini elle kapat!" }))
 Write-Host ("  Log        : $script:LogYolu")
 
-Yaz-Log "=== CD-Kurtar v2 basladi ==="
+Yaz-Log "=== CDSaver v2 basladi ==="
 
 if ($PSCmdlet.ParameterSetName -eq 'Klasor') {
     if (-not (Test-Path $Klasor)) { throw "Klasor bulunamadi: $Klasor" }

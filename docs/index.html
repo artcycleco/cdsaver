@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CD-Kurtar</title>
+<title>CDSaver</title>
 <meta name="description" content="Çizik, eski, okunmayan CD ve DVD'lerden dosya kurtaran küçük bir Windows aracı. Kurulum yok, kaldığı yerden devam eder.">
 <style>
   :root { --bg:#f6f3ee; --ink:#1d1a16; --mute:#6b655c; --line:#e3ddd2; --acc:#b8451f; --card:#fffdf9; --code:#1d1a16; --codetx:#e8e2d6; }
@@ -36,20 +36,21 @@
 </head>
 <body>
 <main>
-  <h1>CD-Kurtar</h1>
+  <img src="logo.svg" width="120" height="120" alt="CDSaver logosu" style="display:block;margin:0 0 18px">
+  <h1>CDSaver</h1>
   <p class="lead">Çizik, eski, okunmayan CD ve DVD'lerden dosya kurtaran küçük bir Windows aracı.</p>
-  <p>Bilgisayarınız bir diski açarken donuyor, kopyalama yarıda kalıyor mu? CD-Kurtar diski sabırla, parça parça okur. Okuyabildiğini kaydeder, okuyamadığını not alır, sonra geri dönüp tekrar dener. Kablo çekilse, bilgisayar kapansa bile kaldığı yerden devam eder.</p>
+  <p>Bilgisayarınız bir diski açarken donuyor, kopyalama yarıda kalıyor mu? CDSaver diski sabırla, parça parça okur. Okuyabildiğini kaydeder, okuyamadığını not alır, sonra geri dönüp tekrar dener. Kablo çekilse, bilgisayar kapansa bile kaldığı yerden devam eder.</p>
   <div class="btns">
-    <a class="btn primary" href="https://github.com/artcycleco/cd-kurtar">GitHub'da aç</a>
-    <a class="btn" href="https://github.com/artcycleco/cd-kurtar/blob/main/KILAVUZ.md">Kılavuz</a>
+    <a class="btn primary" href="https://github.com/artcycleco/cdsaver">GitHub'da aç</a>
+    <a class="btn" href="https://github.com/artcycleco/cdsaver/blob/main/KILAVUZ.md">Kılavuz</a>
   </div>
 
   <h2>Neden yazıldı</h2>
-  <p>1990'lardan kalma aile videoları dört diskteydi. Eski DVD sürücü ilk diski okurken ısındı, bilgisayarı kilitledi ve öldü. Hazır programlar ya aynı şekilde donuyor ya da kurulum, lisans, reklam istiyordu. Bunun üzerine kurulum gerektirmeyen, donmayan, kaldığı yerden devam eden bir araç yazıldı. Dört disk de eksiksiz kurtarıldı.</p>
+  <p>1989 ile 1996 arasından aile görüntüleri, yaklaşık yirmi yıllık dört diskteydi. Eski DVD sürücü ilk diski okurken ısındı, bilgisayarı kilitledi ve öldü. Hazır programlar ya aynı şekilde donuyor ya da kurulum, lisans, reklam istiyordu. Bunun üzerine kurulum gerektirmeyen, donmayan, kaldığı yerden devam eden bir araç yazıldı. Dört disk de eksiksiz kurtarıldı.</p>
 
   <h2>Ekranda ne görürsünüz</h2>
 <div class="term"><span class="c">=======================================================
-  CD-KURTAR  v2
+  CDSAVER  v2
 =======================================================</span>
   Uyku engeli: aktif
   Okuma hizi : 4x
@@ -74,7 +75,7 @@
 
   <h2>Üç adımda</h2>
   <pre>cmd /c dir /s /b E:\
-powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
+powershell -ExecutionPolicy Bypass -File ".\CDSaver.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
 ffmpeg -fflags +genpts -i disk1.DAT -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a aac -b:a 192k disk1.mp4</pre>
   <p>Birincisi diskte ne olduğunu gösterir, ikincisi kurtarır, üçüncüsü VCD videosunu izlenebilir MP4'e çevirir.</p>
 
