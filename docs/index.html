@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CD-Kurtar</title>
+<meta name="description" content="Çizik, eski, okunmayan CD ve DVD'lerden dosya kurtaran küçük bir Windows aracı. Kurulum yok, kaldığı yerden devam eder.">
+<style>
+  :root { --bg:#f6f3ee; --ink:#1d1a16; --mute:#6b655c; --line:#e3ddd2; --acc:#b8451f; --card:#fffdf9; --code:#1d1a16; --codetx:#e8e2d6; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#171513; --ink:#efe9df; --mute:#a39c90; --line:#2d2924; --acc:#e8784f; --card:#1f1c19; --code:#0d0c0b; --codetx:#e8e2d6; } }
+  :root[data-theme="dark"] { --bg:#171513; --ink:#efe9df; --mute:#a39c90; --line:#2d2924; --acc:#e8784f; --card:#1f1c19; --code:#0d0c0b; --codetx:#e8e2d6; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width:760px; margin:0 auto; padding:56px 16px 80px; }
+  h1 { font-size:2.6rem; line-height:1.1; margin:0 0 12px; letter-spacing:-.01em }
+  .lead { font-size:1.25rem; color:var(--mute); margin:0 0 28px }
+  h2 { font-size:1.35rem; margin:44px 0 10px }
+  p { margin:0 0 14px }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 8px }
+  .btn { display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none; font-family:system-ui,sans-serif; font-size:.95rem; border:1px solid var(--line); color:var(--ink); background:var(--card) }
+  .btn.primary { background:var(--acc); color:#fff; border-color:var(--acc) }
+  ul { padding-left:20px } li { margin:6px 0 }
+  pre { background:var(--code); color:var(--codetx); padding:14px 16px; border-radius:8px; overflow-x:auto; font:14px/1.5 Consolas, "Courier New", monospace; }
+  .term { background:#0c0c0c; color:#cfcfcf; border-radius:10px; padding:18px 20px; font:14px/1.55 Consolas, "Courier New", monospace; white-space:pre; overflow-x:auto; border:1px solid #2a2a2a }
+  .term .c { color:#3bc3d3 } .term .y { color:#e0c04a } .term .g { color:#5fd36a } .term .w { color:#fff }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:16px 0 }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px }
+  .card b { display:block; margin-bottom:4px }
+  .card span { color:var(--mute); font-size:.95rem }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--mute); font-size:.95rem }
+  footer a { color:var(--acc) }
+  .credit { display:inline-flex; align-items:center; gap:8px; font-family:system-ui,sans-serif; font-size:.9rem; text-decoration:none; color:var(--ink); border:1px solid var(--line); border-radius:999px; padding:6px 12px; background:var(--card) }
+  .credit svg { width:16px; height:16px }
+  a { color:var(--acc) }
+</style>
+</head>
+<body>
+<main>
+  <h1>CD-Kurtar</h1>
+  <p class="lead">Çizik, eski, okunmayan CD ve DVD'lerden dosya kurtaran küçük bir Windows aracı.</p>
+  <p>Bilgisayarınız bir diski açarken donuyor, kopyalama yarıda kalıyor mu? CD-Kurtar diski sabırla, parça parça okur. Okuyabildiğini kaydeder, okuyamadığını not alır, sonra geri dönüp tekrar dener. Kablo çekilse, bilgisayar kapansa bile kaldığı yerden devam eder.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/artcycleco/cd-kurtar">GitHub'da aç</a>
+    <a class="btn" href="https://github.com/artcycleco/cd-kurtar/blob/main/KILAVUZ.md">Kılavuz</a>
+  </div>
+
+  <h2>Neden yazıldı</h2>
+  <p>1990'lardan kalma aile videoları dört diskteydi. Eski DVD sürücü ilk diski okurken ısındı, bilgisayarı kilitledi ve öldü. Hazır programlar ya aynı şekilde donuyor ya da kurulum, lisans, reklam istiyordu. Bunun üzerine kurulum gerektirmeyen, donmayan, kaldığı yerden devam eden bir araç yazıldı. Dört disk de eksiksiz kurtarıldı.</p>
+
+  <h2>Ekranda ne görürsünüz</h2>
+<div class="term"><span class="c">=======================================================
+  CD-KURTAR  v2
+=======================================================</span>
+  Uyku engeli: aktif
+  Okuma hizi : 4x
+  MOD        : TEK DOSYA
+
+  <span class="w">DOSYA : E:\MPEGAV\AVSEQ01.DAT</span>
+  Boyut : 537436748 bayt (512,5 MB / 262421 sektor)
+  <span class="y">--- GECIS 1/6 | blok 32 sektor | yon ileri | deneme 1 | zaman asimi 10 sn | kalan 262421 sektor</span>
+    %100,0 | kurtarilan 512 MB | sektor 262421/262421 | gecen 00:03:20 | asilma 0 hata 0
+  <span class="g">Tamami kurtarildi, kalan gecise gerek yok.
+  SONUC: 262421/262421 sektor (%100) | okunamayan 0 sektor (0 MB) | sure 00:03:20</span></div>
+
+  <h2>Öne çıkanlar</h2>
+  <div class="grid">
+    <div class="card"><b>Donmaz</b><span>Her okuma zaman sınırlı. Süre dolunca iptal eder, o parçayı sonraya bırakır.</span></div>
+    <div class="card"><b>Kaldığı yerden devam eder</b><span>Yanına bir harita dosyası yazar. Aynı komutu tekrar çalıştırmanız yeter.</span></div>
+    <div class="card"><b>Altı geçiş, iki yön</b><span>Önce büyük parçalar, sonra küçülen parçalar, bazı geçişler tersten.</span></div>
+    <div class="card"><b>Kurulum yok</b><span>Windows'ta gelen PowerShell yeterli. Tek dosya, indir ve çalıştır.</span></div>
+    <div class="card"><b>USB düşse de</b><span>Sürücü kaybolursa bekler, geri gelince devam eder. Bu arada uykuyu engeller.</span></div>
+    <div class="card"><b>Türkçe ve sade</b><span>Yüzde kaç kurtarıldı, nerede eksik var, şimdi ne yapmalısınız: hepsi ekranda.</span></div>
+  </div>
+
+  <h2>Üç adımda</h2>
+  <pre>cmd /c dir /s /b E:\
+powershell -ExecutionPolicy Bypass -File ".\CD-Kurtar.ps1" -Klasor E:\\ -Hedef "C:\Kurtarilan\disk1"
+ffmpeg -fflags +genpts -i disk1.DAT -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a aac -b:a 192k disk1.mp4</pre>
+  <p>Birincisi diskte ne olduğunu gösterir, ikincisi kurtarır, üçüncüsü VCD videosunu izlenebilir MP4'e çevirir.</p>
+
+  <footer>
+    <p><a class="credit" href="https://claude.com/claude-code"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 5.6L19 9l-5.2 1.9L12 16.5l-1.8-5.6L5 9l5.2-1.4z"/><path d="M19 15l.9 2.6L22.5 18.5l-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9z"/></svg>Claude Code ile yapıldı</a></p>
+    <p>Bu araç <a href="https://claude.com/claude-code">Claude Code</a> ile birlikte yazıldı: sorun anlatıldı, kod yazıldı, test edildi, hatalar sohbet içinde düzeltildi. Deneyin hikâyesi <a href="https://artcycle.co">Artcycle LABS</a> sayfasında. MIT lisansı.</p>
+  </footer>
+</main>
+</body>
+</html>
